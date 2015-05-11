@@ -5,9 +5,9 @@ ini_set('default_socket_timeout', 300);
 session_start();
 
 //Make Constants using define.
-define('client_ID', '2181409914a14faeb598ef20216bc346');
+define('clientID', '2181409914a14faeb598ef20216bc346');
 define('client_Secret', 'd9a01b57658c4a1981efc3e91ae1a148');
-define('redirectURI', 'https://localhost/eleanorstrotz');
+define('redirectURI', 'http://localhost/eleanorstrotz/index.php');
 define('ImageDirectory', 'pics/');
 
 ?>
