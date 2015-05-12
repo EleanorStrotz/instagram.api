@@ -7,8 +7,10 @@ session_start();
 //Make Constants using define.
 define('clientID', '2181409914a14faeb598ef20216bc346');
 define('clientSecret', 'd9a01b57658c4a1981efc3e91ae1a148');
-define('redirectURI', 'http://localhost/instagram.api/index.php');
+define('redirectURI', 'http://localhost/eleanorstrotz/index.php');
 define('ImageDirectory', 'pics/');
+
+
 
 //Function that is going to connect to Instagram.
 function connectToInstagram($url){
@@ -41,7 +43,7 @@ function printImages($userID){
 	foreach ($results['data'] as $items) {
 		$image_url = $items['images']['low_resolution']['url'];//going to go through all of my results and give myself back the URL of those pictures 
 		//because we want to have it in the PHP Server.
-		echo '<img src=" '.$image_url.'"/>br/>';
+		echo '<img src=" '.$image_url.'"/><br/>';
 	}
 }
 
@@ -67,10 +69,13 @@ curl_close($curl);
 $results = json_decode($result, true);
 
 $userName =  $results['user']['username'];
+echo $uersName;
 
 $userID = getUserID($username);
 
 printImages($userID);
+
+
 }
 else{
 ?>
@@ -96,6 +101,6 @@ else{
 </body>
 </html>
 <?php
-}
+ }
 ?>
 
