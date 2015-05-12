@@ -6,8 +6,8 @@ session_start();
 
 //Make Constants using define.
 define('clientID', '2181409914a14faeb598ef20216bc346');
-define('client_Secret', 'd9a01b57658c4a1981efc3e91ae1a148');
-define('redirectURI', 'http://localhost/eleanorstrotz/index.php');
+define('clientSecret', 'd9a01b57658c4a1981efc3e91ae1a148');
+define('redirectURI', 'http://localhost/instagram.api/index.php');
 define('ImageDirectory', 'pics/');
 
 if (isset($_GET['code'])){
@@ -26,9 +26,13 @@ curl_setopt($curl, CURLOPT_POSTFIELDS, $access_token_settings);//setting the POS
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); // setting it equal to 1 because we are getting strings back
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);//but in live work-production we want to set this to true.
 
-}
 $result = curl_exec($curl);
-curl_close();
+curl_close($curl);
+
+$result = json_decode($result, true);
+echo $result['user']['username'];
+}
+else{
 ?>
 
 <!DOCTYPE html>
@@ -51,4 +55,7 @@ curl_close();
 	<script src="js/main.js"></script>
 </body>
 </html>
+<?php
+}
+?>
 
