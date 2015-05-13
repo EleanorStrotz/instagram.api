@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
 <?php
 //Configuration for our PHP Server
 set_time_limit(0);
@@ -90,6 +99,8 @@ printImages($userID);
 }
 else{
 ?>
+</body>
+</html>
 
 <!DOCTYPE html>
 <html>
@@ -100,6 +111,7 @@ else{
 
 	<title>Untitled</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/main.css">
 	<link rel="author" href="humans.txt">
 </head>
 <body>
