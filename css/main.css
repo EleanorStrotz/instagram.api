@@ -28,10 +28,16 @@ body{
 	padding-bottom: 10px;
 }
 
-/*media query/ mobile responsive line of code for iphone 5*/
+/*media query/ mobile responsive line of code for iphone 6*/
 @media (min-device-width: 375px) and (max-device-width: 667px){
 	body{
 		background-color:green;
+	}
+	.container{
+
+	}
+	.LOGIN{
+
 	}
 }
 /*media query/ mobile responsive line of code for iphone 5*/

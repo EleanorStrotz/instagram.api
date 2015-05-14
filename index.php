@@ -5,6 +5,7 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="css/style.css">
+	<div id="here">
 </head>
 <body>
 <!-- php code starts -->
@@ -97,6 +98,9 @@ echo $userName;
 $userID = getUserID($userName);
 
 printImages($userID);
+
+echo "<div id= here>";
+echo "</div>";
 
 
 }
