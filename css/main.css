@@ -1,3 +1,43 @@
-body {
-    background-color: yellow;
+/*First/ intro page css*/
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);*/
+body{
+	font: normal 14px 'Open Sans', Arial, sans-serif;
+	color: #F0FFFF;
+	background-image: url("https://40.media.tumblr.com/416fb5f9b9ad9d218f2faed3a5140d77/tumblr_no8zcc8qA61syowdpo1_1280.jpg");
+	/*background-size: 100%;*/
+	/*background-repeat: no-repeat;*/
+	background-attachment: fixed;
+    background-position: center; 
+    /*background-repeat: no-repeat;*/
+
+}
+.container{
+	width: 900px;
+	height: 200px;
+	margin-top: 40px;
+	background: #F0FFFF;
+	text-align: center;
+	padding-top: 30px;
+	opacity: 0.7;
+	margin-left: 200px;
+}
+.LOGIN{
+	font-family: "Times New Roman", Times, serif;
+	color: black;
+	font-size: 60px;
+	padding-bottom: 10px;
+}
+
+/*media query/ mobile responsive line of code for iphone 5*/
+@media (min-device-width: 375px) and (max-device-width: 667px){
+	body{
+		background-color:green;
+	}
+}
+/*media query/ mobile responsive line of code for iphone 5*/
+@media (min-device-width: 320px) and (max-device-width:667px){
+	body{
+		background-image: 40%;
+		background-color: blue;
+	}
 }

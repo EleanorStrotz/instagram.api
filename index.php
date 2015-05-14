@@ -1,3 +1,5 @@
+<!-- Second Page -->
+<!-- Html code to link to css -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,8 +7,7 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-
+<!-- php code starts -->
 <?php
 //Configuration for our PHP Server
 set_time_limit(0);
@@ -35,6 +36,7 @@ function connectToInstagram($url){
 		curl_close($ch);
 		return $result;
 }
+
 //Function to get UserID cause userName doesn't allow us to get pictures!
 function getUserID($userName){
 	$url = 'https://api.instagram.com/v1/users/search?q='.$userName. '&client_id='.clientID;
@@ -43,6 +45,7 @@ function getUserID($userName){
 
 	return $results['data'][0]['id'];
 }
+
 //Function to print images onto screen
 function printImages($userID){
 	$url = 'https://api.instagram.com/v1/users/'.$userID.'/media/recent?client_id='.clientID.'&count=5';
@@ -57,6 +60,7 @@ function printImages($userID){
 		savePictures($image_url);
 	}
 }
+
 //Function to save a image to server
 function savePictures($image_url){
 	echo $image_url. '<br>'; 
@@ -66,7 +70,6 @@ function savePictures($image_url){
 	$destination = ImageDirectory . $filename;//making sure that the image doesnt exist in the storage.
 	file_put_contents($destination, file_get_contents($image_url));//goes and grabs an imagefile and stores it into our server
 }
-
 if (isset($_GET['code'])){
 	$code = $_GET['code'];
 	$url = 'https://api.instagram.com/oauth/access_token';
@@ -99,9 +102,13 @@ printImages($userID);
 }
 else{
 ?>
+<!-- end to html of second page -->
 </body>
 </html>
+<!-- end to second page -->
 
+
+<!-- opening page -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -110,20 +117,23 @@ else{
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Untitled</title>
-	<link rel="stylesheet" href="css/style.css">
+	<!-- main.css is the first pages style -->
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="author" href="humans.txt">
 </head>
 <body>
+	<div class="container">
+	<div class="LOGIN">
 	<!-- Creating a login for people to go and give approval for our web app to access their Instagram Account  
 	After getting approval we are now going to have the information to that we can play with.
 	-->
 	<a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code">
-	LOGIN</a>
-	<script src="js/main.js"></script>
+	<div class="LOGIN">
+	Please Access Instagram Here!</a>
+	</div>
+	</div>
 </body>
 </html>
 <?php
- }
+}
 ?>
-
